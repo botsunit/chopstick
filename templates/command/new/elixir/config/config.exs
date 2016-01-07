@@ -1,39 +1,73 @@
 use Mix.Config
 
+import_config "#{Mix.env}.exs"
+
 config :wok,
   messages: [
-    handler: <%= project_name_camelize %>.MessageHandler,
+    handler: <%= project_name_camelize %>.Wok.MessageHandler,
     services: [
-      {"my_service", {<%= project_name_camelize %>.ServiceHandler, :action}}
+      {"*/my_resource/created", {<%= project_name_camelize %>.MessageControllers.MyResourceController, :create}}
+      #{"*/my_resource/destroyed", {<%= project_name_camelize %>.MessageControllers.MyResourceController, :destroy}}
+      #{"*/my_resource/updated", {<%= project_name_camelize %>.MessageControllers.MyResourceController, :update}}
     ],
     consumer_group: "<%= project_name_camelize %>",
     local_queue_name: "<%= project_name %>_queue",
     local_consumer_group: "<%= project_name_camelize %>ConsumerGroup",
     max_services_fork: 3,
     topics: [
-      {"test", [fetch_frequency: 5000, max_bytes: 10485760]},
+      {"bots_events_#{Mix.env}", [fetch_frequency: 5000, max_bytes: 10485760, max_messages: 1000]}
     ]
   ],
   initializer: [
-    {<%= project_name_camelize %>.Initialiser, []}
+    {<%= project_name_camelize %>.Wok.Initializer, []}
   ],
   rest: [
-    port: 8080,
+    port: 8075,
     ip: '0.0.0.0',
     max_conn: 100,
     routes: [
-      {:GET, '/<%= project_name %>', {<%= project_name_camelize %>.RESTHandler, :do_get}},
+      {:GET, '/my_rest_resources/:id', {<%= project_name_camelize %>.RestControllers.MyRestResourcesController, :show}},
+      #{:POST, '/my_rest_resources', {<%= project_name_camelize %>.RestControllers.MyRestResourcesController, :create}},
+      #{:PUT, '/my_rest_resources/:id', {<%= project_name_camelize %>.RestControllers.MyRestResourcesController, :update}},
+      #{:DELETE, '/my_rest_resources/:id', {<%= project_name_camelize %>.RestControllers.MyRestResourcesController, :destroy}},
+      #{'WS', "/my_rest_resources/:id", {<%= project_name_camelize %>.RestControllers.MyRestResourcesController, :connect}}
+      {:static, "/public", {:priv_dir, :<%= project_name %>, "public_files"}}
+    ],
+    cors: [
+        {:'Access-Control-Allow-Methods', ["GET",
+                                          "POST",
+                                          "PUT",
+                                          "PATCH",
+                                          "HEAD",
+                                          "OPTIONS",
+                                          "DELETE"]},
+        {:'Access-Control-Allow-Origin', "*"},
+        {:'Access-Control-Max-Age', 1728001},
+        {:'Access-Control-Allow-Credentials', true},
+        {:'Access-Control-Allow-Headers', ["Access-Control-Allow-Origin",
+                                          "Authorization",
+                                          "Origin",
+                                          "x-requested-with",
+                                          "Content-Type",
+                                          "Content-Range",
+                                          "Content-Disposition",
+                                          "Content-Description"]}
     ]
   ]
-
 config :kafe,
-  brokers: [
-    {'localhost', 9092}
-  ],
+  brokers:   brokers: System.get_env("KAFKA_BROKERS") |> String.split(",") |> Enum.map(fn(server) ->
+    server_host = server |> String.split(":") |> List.first |> String.to_char_list
+    server_port = server |> String.split(":") |> List.last |> String.to_integer
+    {server_host, server_port}
+  end),
   client_id: "kafe",
   api_version: 0,
-  correlation_id: 0
-
+  correlation_id: 0,
+  socket: [
+    {'sndbuf', 4194304},
+    {'recbuf', 4194304},
+    {'buffer', 4194304}
+  ]
 config :pipette,
   segment_path: './queues',
   segment_memory_size: 10485760,

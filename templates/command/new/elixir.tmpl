@@ -1,11 +1,38 @@
 {dir, "<%= root %>/<%= project_name %>"}.
+
 {dir, "<%= root %>/<%= project_name %>/config"}.
+{template, "elixir/config/config.exs", "<%= root %>/<%= project_name %>/config/config.exs"}.
+{template, "elixir/config/dev.exs", "<%= root %>/<%= project_name %>/config/dev.exs"}.
+{template, "elixir/config/prod.exs", "<%= root %>/<%= project_name %>/config/prod.exs"}.
+{template, "elixir/config/test.exs", "<%= root %>/<%= project_name %>/config/test.exs"}.
+
 {dir, "<%= root %>/<%= project_name %>/lib"}.
+{dir, "<%= root %>/<%= project_name %>/lib/datastores"}.
+{file, "<%= root %>/<%= project_name %>/lib/datastores/.gitkeep"}.
+{dir, "<%= root %>/<%= project_name %>/lib/message_controllers"}.
+{template, "elixir/lib/message_controllers/my_resource_controller.ex",
+           "<%= root %>/<%= project_name %>/lib/message_controllers/my_resource_controller.ex"}.
+
+{dir, "<%= root %>/<%= project_name %>/lib/models"}.
+{file, "<%= root %>/<%= project_name %>/lib/models/.gitkeep"}.
+
+{dir, "<%= root %>/<%= project_name %>/lib/rest_controllers"}.
+{template, "elixir/lib/rest_controllers/my_rest_resources_controller.ex",
+           "<%= root %>/<%= project_name %>/lib/rest_controllers/my_rest_resources_controller.ex"}.
+
+{dir, "<%= root %>/<%= project_name %>/lib/services"}.
+{file, "<%= root %>/<%= project_name %>/lib/services/.gitkeep"}.
+
+{dir, "<%= root %>/<%= project_name %>/lib/wok"}.
+{template, "elixir/lib/wok/initializer.ex",
+           "<%= root %>/<%= project_name %>/lib/wok/initializer.ex"}.
+{template, "elixir/lib/wok/message_handler.ex",
+           "<%= root %>/<%= project_name %>/lib/wok/message_handler.ex"}.
+
+{dir, "<%= root %>/<%= project_name %>/priv"}.
+{dir, "<%= root %>/<%= project_name %>/priv/public_files"}.
+{template, "elixir/priv/public_files/hello_world.html",
+           "<%= root %>/<%= project_name %>/priv/public_files/hello_world.html"}.
 
 {template, "elixir/mix.exs", "<%= root %>/<%= project_name %>/mix.exs"}.
 {template, "elixir/README.md", "<%= root %>/<%= project_name %>/README.md"}.
-{template, "elixir/config/config.exs", "<%= root %>/<%= project_name %>/config/config.exs"}.
-{template, "elixir/lib/project_initializer.ex", "<%= root %>/<%= project_name %>/lib/<%= project_name %>_initializer.ex"}.
-{template, "elixir/lib/project_message_handler.ex", "<%= root %>/<%= project_name %>/lib/<%= project_name %>_message_handler.ex"}.
-{template, "elixir/lib/project_rest_handler.ex", "<%= root %>/<%= project_name %>/lib/<%= project_name %>_rest_handler.ex"}.
-{template, "elixir/lib/project_service_handler.ex", "<%= root %>/<%= project_name %>/lib/<%= project_name %>_service_handler.ex"}.
