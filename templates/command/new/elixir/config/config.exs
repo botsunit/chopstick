@@ -55,11 +55,9 @@ config :wok,
     ]
   ]
 config :kafe,
-  brokers:   brokers: System.get_env("KAFKA_BROKERS") |> String.split(",") |> Enum.map(fn(server) ->
-    server_host = server |> String.split(":") |> List.first |> String.to_char_list
-    server_port = server |> String.split(":") |> List.last |> String.to_integer
-    {server_host, server_port}
-  end),
+  brokers: [
+    {'127.0.0.1', 9092}
+  ],
   client_id: "kafe",
   api_version: 0,
   correlation_id: 0,
