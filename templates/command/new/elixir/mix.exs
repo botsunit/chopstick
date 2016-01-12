@@ -4,7 +4,7 @@ defmodule <%= project_name_camelize %>.Mixfile do
   def project do
     [app: :<%= project_name %>,
      version: "0.0.1",
-     elixir: "~> 1.1",
+     elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]

@@ -1,7 +1,5 @@
 use Mix.Config
 
-import_config "#{Mix.env}.exs"
-
 config :wok,
   messages: [
     handler: <%= project_name_camelize %>.Wok.MessageHandler,
@@ -81,4 +79,6 @@ config :lager,
     lager_file_backend: [file: 'log/wok_debug.log', level: :debug],
     lager_file_backend: [file: 'log/wok_console.log', level: :info]
   ]
+
+import_config "#{Mix.env}.exs"
 

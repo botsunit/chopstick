@@ -7,27 +7,27 @@
 {template, "elixir/config/test.exs", "<%= root %>/<%= project_name %>/config/test.exs"}.
 
 {dir, "<%= root %>/<%= project_name %>/lib"}.
-{dir, "<%= root %>/<%= project_name %>/lib/datastores"}.
-{file, "<%= root %>/<%= project_name %>/lib/datastores/.gitkeep"}.
-{dir, "<%= root %>/<%= project_name %>/lib/message_controllers"}.
-{template, "elixir/lib/message_controllers/my_resource_controller.ex",
-           "<%= root %>/<%= project_name %>/lib/message_controllers/my_resource_controller.ex"}.
+{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/datastores"}.
+{file, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/datastores/.gitkeep"}.
+{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/message_controllers"}.
+{template, "elixir/lib/project_name/message_controllers/my_resource_controller.ex",
+           "<%= root %>/<%= project_name %>/lib/<%= project_name %>/message_controllers/my_resource_controller.ex"}.
 
-{dir, "<%= root %>/<%= project_name %>/lib/models"}.
-{file, "<%= root %>/<%= project_name %>/lib/models/.gitkeep"}.
+{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/models"}.
+{file, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/models/.gitkeep"}.
 
-{dir, "<%= root %>/<%= project_name %>/lib/rest_controllers"}.
-{template, "elixir/lib/rest_controllers/my_rest_resources_controller.ex",
-           "<%= root %>/<%= project_name %>/lib/rest_controllers/my_rest_resources_controller.ex"}.
+{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/rest_controllers"}.
+{template, "elixir/lib/project_name/rest_controllers/my_rest_resources_controller.ex",
+           "<%= root %>/<%= project_name %>/lib/<%= project_name %>/rest_controllers/my_rest_resources_controller.ex"}.
 
-{dir, "<%= root %>/<%= project_name %>/lib/services"}.
-{file, "<%= root %>/<%= project_name %>/lib/services/.gitkeep"}.
+{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/services"}.
+{file, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/services/.gitkeep"}.
 
-{dir, "<%= root %>/<%= project_name %>/lib/wok"}.
-{template, "elixir/lib/wok/initializer.ex",
-           "<%= root %>/<%= project_name %>/lib/wok/initializer.ex"}.
-{template, "elixir/lib/wok/message_handler.ex",
-           "<%= root %>/<%= project_name %>/lib/wok/message_handler.ex"}.
+{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/wok"}.
+{template, "elixir/lib/project_name/wok/initializer.ex",
+           "<%= root %>/<%= project_name %>/lib/<%= project_name %>/wok/initializer.ex"}.
+{template, "elixir/lib/project_name/wok/message_handler.ex",
+           "<%= root %>/<%= project_name %>/lib/<%= project_name %>/wok/message_handler.ex"}.
 
 {dir, "<%= root %>/<%= project_name %>/priv"}.
 {dir, "<%= root %>/<%= project_name %>/priv/public_files"}.
