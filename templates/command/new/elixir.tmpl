@@ -1,38 +1,39 @@
-{dir, "<%= root %>/<%= project_name %>"}.
+{dir, "<%= root %>/<%= bot_name %>"}.
+{template, "common/_botsunit", "<%= root %>/<%= bot_name %>/.botsunit"}.
 
-{dir, "<%= root %>/<%= project_name %>/config"}.
-{template, "elixir/config/config.exs", "<%= root %>/<%= project_name %>/config/config.exs"}.
-{template, "elixir/config/dev.exs", "<%= root %>/<%= project_name %>/config/dev.exs"}.
-{template, "elixir/config/prod.exs", "<%= root %>/<%= project_name %>/config/prod.exs"}.
-{template, "elixir/config/test.exs", "<%= root %>/<%= project_name %>/config/test.exs"}.
+{dir, "<%= root %>/<%= bot_name %>/config"}.
+{template, "elixir/config/config.exs", "<%= root %>/<%= bot_name %>/config/config.exs"}.
+{template, "elixir/config/dev.exs", "<%= root %>/<%= bot_name %>/config/dev.exs"}.
+{template, "elixir/config/prod.exs", "<%= root %>/<%= bot_name %>/config/prod.exs"}.
+{template, "elixir/config/test.exs", "<%= root %>/<%= bot_name %>/config/test.exs"}.
 
-{dir, "<%= root %>/<%= project_name %>/lib"}.
-{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/datastores"}.
-{file, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/datastores/.gitkeep"}.
-{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/message_controllers"}.
-{template, "elixir/lib/project_name/message_controllers/my_resource_controller.ex",
-           "<%= root %>/<%= project_name %>/lib/<%= project_name %>/message_controllers/my_resource_controller.ex"}.
+{dir, "<%= root %>/<%= bot_name %>/lib"}.
+{dir, "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/datastores"}.
+{file, "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/datastores/.gitkeep"}.
+{dir, "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/message_controllers"}.
+{template, "elixir/lib/bot_name/message_controllers/my_resource_controller.ex",
+           "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/message_controllers/my_resource_controller.ex"}.
 
-{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/models"}.
-{file, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/models/.gitkeep"}.
+{dir, "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/models"}.
+{file, "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/models/.gitkeep"}.
 
-{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/rest_controllers"}.
-{template, "elixir/lib/project_name/rest_controllers/my_rest_resources_controller.ex",
-           "<%= root %>/<%= project_name %>/lib/<%= project_name %>/rest_controllers/my_rest_resources_controller.ex"}.
+{dir, "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/rest_controllers"}.
+{template, "elixir/lib/bot_name/rest_controllers/my_rest_resources_controller.ex",
+           "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/rest_controllers/my_rest_resources_controller.ex"}.
 
-{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/services"}.
-{file, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/services/.gitkeep"}.
+{dir, "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/services"}.
+{file, "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/services/.gitkeep"}.
 
-{dir, "<%= root %>/<%= project_name %>/lib/<%= project_name %>/wok"}.
-{template, "elixir/lib/project_name/wok/initializer.ex",
-           "<%= root %>/<%= project_name %>/lib/<%= project_name %>/wok/initializer.ex"}.
-{template, "elixir/lib/project_name/wok/message_handler.ex",
-           "<%= root %>/<%= project_name %>/lib/<%= project_name %>/wok/message_handler.ex"}.
+{dir, "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/wok"}.
+{template, "elixir/lib/bot_name/wok/initializer.ex",
+           "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/wok/initializer.ex"}.
+{template, "elixir/lib/bot_name/wok/message_handler.ex",
+           "<%= root %>/<%= bot_name %>/lib/<%= bot_name %>/wok/message_handler.ex"}.
 
-{dir, "<%= root %>/<%= project_name %>/priv"}.
-{dir, "<%= root %>/<%= project_name %>/priv/public_files"}.
+{dir, "<%= root %>/<%= bot_name %>/priv"}.
+{dir, "<%= root %>/<%= bot_name %>/priv/public_files"}.
 {template, "elixir/priv/public_files/hello_world.html",
-           "<%= root %>/<%= project_name %>/priv/public_files/hello_world.html"}.
+           "<%= root %>/<%= bot_name %>/priv/public_files/hello_world.html"}.
 
-{template, "elixir/mix.exs", "<%= root %>/<%= project_name %>/mix.exs"}.
-{template, "elixir/README.md", "<%= root %>/<%= project_name %>/README.md"}.
+{template, "elixir/mix.exs", "<%= root %>/<%= bot_name %>/mix.exs"}.
+{template, "elixir/README.md", "<%= root %>/<%= bot_name %>/README.md"}.

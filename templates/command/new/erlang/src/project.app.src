@@ -1,4 +1,4 @@
-{application, <%= project_name %>,
+{application, <%= bot_name %>,
  [
   {description, ""},
   {vsn, "0.0.1"},

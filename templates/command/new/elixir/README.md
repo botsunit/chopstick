@@ -1,1 +1,1 @@
-# <%= project_name %>
+# <%= bot_name %>

@@ -1,5 +1,5 @@
 % @hidden
--module(<%= project_name %>_initializer).
+-module(<%= bot_name %>_initializer).
 -behaviour(wok_initializer).
 
 -export([init/1]).

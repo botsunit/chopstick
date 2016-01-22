@@ -2,34 +2,34 @@ use Mix.Config
 
 config :wok,
   messages: [
-    handler: <%= project_name_camelize %>.Wok.MessageHandler,
+    handler: <%= bot_name_camelize %>.Wok.MessageHandler,
     services: [
-      {"*/my_resource/created", {<%= project_name_camelize %>.MessageControllers.MyResourceController, :create}}
-      #{"*/my_resource/destroyed", {<%= project_name_camelize %>.MessageControllers.MyResourceController, :destroy}}
-      #{"*/my_resource/updated", {<%= project_name_camelize %>.MessageControllers.MyResourceController, :update}}
+      {"*/my_resource/created", {<%= bot_name_camelize %>.MessageControllers.MyResourceController, :create}}
+      #{"*/my_resource/destroyed", {<%= bot_name_camelize %>.MessageControllers.MyResourceController, :destroy}}
+      #{"*/my_resource/updated", {<%= bot_name_camelize %>.MessageControllers.MyResourceController, :update}}
     ],
-    consumer_group: "<%= project_name_camelize %>",
-    local_queue_name: "<%= project_name %>_queue",
-    local_consumer_group: "<%= project_name_camelize %>ConsumerGroup",
+    consumer_group: "<%= bot_name_camelize %>",
+    local_queue_name: "<%= bot_name %>_queue",
+    local_consumer_group: "<%= bot_name_camelize %>ConsumerGroup",
     max_services_fork: 3,
     topics: [
       {"bots_events_#{Mix.env}", [fetch_frequency: 5000, max_bytes: 10485760, max_messages: 1000]}
     ]
   ],
   initializer: [
-    {<%= project_name_camelize %>.Wok.Initializer, []}
+    {<%= bot_name_camelize %>.Wok.Initializer, []}
   ],
   rest: [
     port: 8075,
     ip: '0.0.0.0',
     max_conn: 100,
     routes: [
-      {:GET, '/my_rest_resources/:id', {<%= project_name_camelize %>.RestControllers.MyRestResourcesController, :show}},
-      #{:POST, '/my_rest_resources', {<%= project_name_camelize %>.RestControllers.MyRestResourcesController, :create}},
-      #{:PUT, '/my_rest_resources/:id', {<%= project_name_camelize %>.RestControllers.MyRestResourcesController, :update}},
-      #{:DELETE, '/my_rest_resources/:id', {<%= project_name_camelize %>.RestControllers.MyRestResourcesController, :destroy}},
-      #{'WS', "/my_rest_resources/:id", {<%= project_name_camelize %>.RestControllers.MyRestResourcesController, :connect}}
-      {:static, "/public", {:priv_dir, :<%= project_name %>, "public_files"}}
+      {:GET, '/my_rest_resources/:id', {<%= bot_name_camelize %>.RestControllers.MyRestResourcesController, :show}},
+      #{:POST, '/my_rest_resources', {<%= bot_name_camelize %>.RestControllers.MyRestResourcesController, :create}},
+      #{:PUT, '/my_rest_resources/:id', {<%= bot_name_camelize %>.RestControllers.MyRestResourcesController, :update}},
+      #{:DELETE, '/my_rest_resources/:id', {<%= bot_name_camelize %>.RestControllers.MyRestResourcesController, :destroy}},
+      #{'WS', '/my_rest_resources/:id', {<%= bot_name_camelize %>.RestControllers.MyRestResourcesController, :connect}}
+      {:static, '/public', {:priv_dir, :<%= bot_name %>, "public_files"}}
     ],
     cors: [
         {:'Access-Control-Allow-Methods', ["GET",

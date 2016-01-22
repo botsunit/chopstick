@@ -1,13 +1,15 @@
-{dir, "<%= root %>/<%= project_name %>"}.
-{dir, "<%= root %>/<%= project_name %>/config"}.
-{dir, "<%= root %>/<%= project_name %>/src"}.
+{dir, "<%= root %>/<%= bot_name %>"}.
+{download, "https://raw.githubusercontent.com/ninenines/erlang.mk/master/erlang.mk", "<%= root %>/<%= bot_name %>/erlang.mk"}.
+{template, "common/_botsunit", "<%= root %>/<%= bot_name %>/.botsunit"}.
+{template, "erlang/Makefile", "<%= root %>/<%= bot_name %>/Makefile"}.
+{template, "erlang/README.md", "<%= root %>/<%= bot_name %>/README.md"}.
 
-{download, "https://raw.githubusercontent.com/ninenines/erlang.mk/master/erlang.mk", "<%= root %>/<%= project_name %>/erlang.mk"}.
-{template, "erlang/Makefile", "<%= root %>/<%= project_name %>/Makefile"}.
-{template, "erlang/README.md", "<%= root %>/<%= project_name %>/README.md"}.
-{template, "erlang/config/project.config", "<%= root %>/<%= project_name %>/config/<%= project_name %>.config"}.
-{template, "erlang/src/project.app.src", "<%= root %>/<%= project_name %>/src/<%= project_name %>.app.src"}.
-{template, "erlang/src/project_initializer.erl", "<%= root %>/<%= project_name %>/src/<%= project_name %>_initializer.erl"}.
-{template, "erlang/src/project_message_handler.erl", "<%= root %>/<%= project_name %>/src/<%= project_name %>_message_handler.erl"}.
-{template, "erlang/src/project_rest_handler.erl", "<%= root %>/<%= project_name %>/src/<%= project_name %>_rest_handler.erl"}.
-{template, "erlang/src/project_service_handler.erl", "<%= root %>/<%= project_name %>/src/<%= project_name %>_service_handler.erl"}.
+{dir, "<%= root %>/<%= bot_name %>/config"}.
+{template, "erlang/config/project.config", "<%= root %>/<%= bot_name %>/config/<%= bot_name %>.config"}.
+
+{dir, "<%= root %>/<%= bot_name %>/src"}.
+{template, "erlang/src/project.app.src", "<%= root %>/<%= bot_name %>/src/<%= bot_name %>.app.src"}.
+{template, "erlang/src/bot_initializer.erl", "<%= root %>/<%= bot_name %>/src/<%= bot_name %>_initializer.erl"}.
+{template, "erlang/src/bot_message_handler.erl", "<%= root %>/<%= bot_name %>/src/<%= bot_name %>_message_handler.erl"}.
+{template, "erlang/src/bot_rest_handler.erl", "<%= root %>/<%= bot_name %>/src/<%= bot_name %>_rest_handler.erl"}.
+{template, "erlang/src/bot_service_handler.erl", "<%= root %>/<%= bot_name %>/src/<%= bot_name %>_service_handler.erl"}.
