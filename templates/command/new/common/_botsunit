@@ -3,7 +3,7 @@ vsn = <%= chopstick_vsn %>
 
 [bot]
 name = <%= bot_name %>
-target = <%= target %>
+id = <%= bot_uuid %>
+<%= if target do %>target = <%= target %><% end %>
 <%= if project_uuid do %>project = <%= project_uuid %><% end %>
-<%= if bot_uuid do %>uuid = <%= bot_uuid %><% end %>
 
