@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title><%= bot_name %>: Welcome aboard</title>
+    <link href="{% static "main.css" %}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="page">
+      <div id="sidebar">
+        <ul id="sidebar-items">
+          <li>
+            <h3>Join the community</h3>
+            <ul class="links">
+              <li><a href="">Bots Unit</a></li>
+              <li><a href="">Bots Unit forum</a></li>
+              <li><a href="">Bots Unit on twitter</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>Browse the documentation</h3>
+            <ul class="links">
+              <li><a href="">Bots Unit</a></li>
+              <li><a href="">Wok</a></li>
+              <li><a href="">Erlang</a></li>
+              <li><a href="">Elixir</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div id="content">
+        <div id="header">
+          <h1><%= bot_name %></h1>
+          <h2>Welcome</h2>
+        </div>
+
+        <div id="getting-started">
+          <h1>Getting started</h1>
+          <h2>Here&rsquo;s how to get rolling:</h2>
+
+          <ol>
+            <li>
+              <h2>Go to <tt><%= bot_name %>/src</tt></h2>
+              <p>Update your handlers.</p>
+            </li>
+
+            <li>
+              <h2>That's all folks...</h2>
+              <p>...have fun!</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div id="footer">&nbsp;</div>
+    </div>
+  </body>
+</html>

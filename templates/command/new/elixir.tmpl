@@ -32,8 +32,13 @@
 
 {dir, "<%= root %>/<%= bot_name %>/priv"}.
 {dir, "<%= root %>/<%= bot_name %>/priv/public_files"}.
-{template, "elixir/priv/public_files/hello_world.html",
+{template, "common/priv/public_files/hello_world.html",
            "<%= root %>/<%= bot_name %>/priv/public_files/hello_world.html"}.
+{template, "common/priv/public_files/main.css",
+           "<%= root %>/<%= bot_name %>/priv/public_files/main.css"}.
+
+{dir, "<%= root %>/<%= bot_name %>/templates"}.
+{template, "common/templates/about.tmpl", "<%= root %>/<%= bot_name %>/templates/about.tmpl"}.
 
 {template, "elixir/mix.exs", "<%= root %>/<%= bot_name %>/mix.exs"}.
 {template, "elixir/README.md", "<%= root %>/<%= bot_name %>/README.md"}.

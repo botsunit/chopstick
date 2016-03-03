@@ -1,13 +1,15 @@
 PROJECT = <%= bot_name %>
 
-DEPS = wok wok_message_handler
-dep_wok = git https://github.com/botsunit/wok.git master
-dep_wok_message_handler = git https://github.com/botsunit/wok_message_handler.git master
+DEPS = wok wok_erlang_templates
+dep_wok = git git@gitlab.botsunit.com:msaas/wok.git master
+dep_wok_erlang_templates = git git@gitlab.botsunit.com:msaas/wok_erlang_templates.git master
 
-DEP_PLUGINS = jorel
-BUILD_DEPS = jorel
+DEP_PLUGINS = wok_erlang_templates
 
-dep_jorel = git https://github.com/emedia-project/jorel.git master
+TMPL_OPTS = {libraries, [{wok_helpers, wok_helpers_dtl}]} \
+            , {default_libraries, [wok_helpers]} \
+            , report_warnings \
+            , report_errors
 
 include erlang.mk
 

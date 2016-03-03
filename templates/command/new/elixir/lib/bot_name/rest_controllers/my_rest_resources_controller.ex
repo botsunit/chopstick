@@ -1,8 +1,12 @@
 defmodule <%= bot_name_camelize %>.RestControllers.MyRestResourcesController do
-  def show(req, state) do
-    id = :cowboy_req.binding(:id, req)
+  def about(req) do
+    Wok.Response.render(req, :about_tmpl)
+  end
+
+  def show(req) do
+    {:ok, id, req} = Wok.Request.param(req, :id)
     message = "Hello <%= bot_name_camelize %>.RestControllers.MyRestResourcesController " <> id
-    {200, [{"content-type", "text/plain"}], message, state}
+    Wok.Response.set_response(req, {200, [{"content-type", "text/plain"}], message})
   end
 end
 

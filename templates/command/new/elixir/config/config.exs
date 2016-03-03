@@ -24,6 +24,7 @@ config :wok,
     ip: '0.0.0.0',
     max_conn: 100,
     routes: [
+      {:GET, '/', {<%= bot_name_camelize %>.RestControllers.MyRestResourcesController, :about}},
       {:GET, '/my_rest_resources/:id', {<%= bot_name_camelize %>.RestControllers.MyRestResourcesController, :show}},
       #{:POST, '/my_rest_resources', {<%= bot_name_camelize %>.RestControllers.MyRestResourcesController, :create}},
       #{:PUT, '/my_rest_resources/:id', {<%= bot_name_camelize %>.RestControllers.MyRestResourcesController, :update}},

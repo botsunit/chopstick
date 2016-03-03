@@ -1,6 +1,6 @@
 {application, <%= bot_name %>,
  [
-  {description, ""},
+  {description, "<%= bot_name %>"},
   {vsn, "0.0.1"},
   {registered, []},
   {modules, []},
@@ -14,5 +14,6 @@
                   , pipette
                   , wok
                  ]},
+  {mod, { <%= bot_name %>_app, []}},
   {env, []}
  ]}.
